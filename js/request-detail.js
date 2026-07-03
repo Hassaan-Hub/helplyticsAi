@@ -12,23 +12,14 @@ import {
 } from "./firebaseCode.js";
 
 const params = new URLSearchParams(window.location.search);
-
 const requestId = params.get("id");
-
 const title = document.getElementById("title");
-
 const description = document.getElementById("description");
-
 const category = document.getElementById("category");
-
 const urgency = document.getElementById("urgency");
-
 const status = document.getElementById("status");
-
 const helpersList = document.getElementById("helpersList");
-
 const helpBtn = document.getElementById("helpBtn");
-
 const solveBtn = document.getElementById("solveBtn");
 
 let currentUser;
