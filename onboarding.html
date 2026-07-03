@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Onboarding</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 flex justify-center items-center min-h-screen">
+
+  <div class="bg-slate-900 p-8 rounded-2xl w-[400px] shadow-lg">
+    <h1 class="text-3xl text-white font-bold mb-6 text-center">
+      Complete Your Profile
+    </h1>
+
+    <form id="onboardingForm" class="space-y-4">
+
+      <input
+        type="text"
+        id="skills"
+        placeholder="Skills (HTML, CSS, JS)"
+        class="w-full p-3 rounded-lg bg-slate-800 text-white outline-none"
+      />
+
+      <input
+        type="text"
+        id="interests"
+        placeholder="Interests"
+        class="w-full p-3 rounded-lg bg-slate-800 text-white outline-none"
+      />
+
+      <input
+        type="text"
+        id="location"
+        placeholder="Location"
+        class="w-full p-3 rounded-lg bg-slate-800 text-white outline-none"
+      />
+
+      <button
+        class="w-full bg-blue-600 py-3 rounded-lg text-white font-bold"
+      >
+        Save Profile
+      </button>
+
+    </form>
+  </div>
+
+  <script type="module" src="./js/onboarding.js"></script>
+</body>
+</html>

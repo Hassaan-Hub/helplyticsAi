@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white min-h-screen">
+
+    <div class="max-w-5xl mx-auto p-8">
+
+        <div class="bg-slate-900 rounded-2xl p-8">
+
+            <div class="flex items-center gap-6">
+
+                <div class="w-24 h-24 rounded-full bg-blue-600 flex items-center justify-center text-3xl font-bold"
+                    id="avatar">
+                    H
+                </div>
+
+                <div>
+                    <h1 id="name" class="text-4xl font-bold">
+                        Loading...
+                    </h1>
+
+                    <p id="email" class="text-slate-400">
+                        Loading...
+                    </p>
+
+                    <p id="role" class="text-slate-400">
+                        Loading...
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Stats -->
+        <div class="grid md:grid-cols-2 gap-6 mt-8">
+
+            <div class="bg-slate-900 p-6 rounded-2xl">
+                <h2 class="text-xl font-bold mb-4">
+                    Skills
+                </h2>
+
+                <div id="skills"></div>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded-2xl">
+                <h2 class="text-xl font-bold mb-4">
+                    Interests
+                </h2>
+
+                <div id="interests"></div>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded-2xl">
+                <h2 class="text-xl font-bold mb-4">
+                    Location
+                </h2>
+
+                <p id="location"></p>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded-2xl">
+                <h2 class="text-xl font-bold mb-4">
+                    Trust Score
+                </h2>
+
+                <p id="trustScore"></p>
+                <p id="badge"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="./js/profile.js"></script>
+
+</body>
+
+</html>

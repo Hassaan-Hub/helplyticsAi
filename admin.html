@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white">
+
+  <div class="max-w-7xl mx-auto p-8">
+
+    <h1 class="text-4xl font-bold mb-8">
+      👨‍💼 Admin Panel
+    </h1>
+
+    <!-- STATS -->
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+
+      <div class="bg-slate-900 p-6 rounded-xl">
+        <h2>Total Users</h2>
+        <p id="totalUsers" class="text-3xl font-bold">0</p>
+      </div>
+
+      <div class="bg-slate-900 p-6 rounded-xl">
+        <h2>Total Requests</h2>
+        <p id="totalRequests" class="text-3xl font-bold">0</p>
+      </div>
+
+      <div class="bg-slate-900 p-6 rounded-xl">
+        <h2>Active Helpers</h2>
+        <p id="activeHelpers" class="text-3xl font-bold">0</p>
+      </div>
+
+    </div>
+
+    <!-- USERS TABLE -->
+    <h2 class="text-2xl font-bold mb-4">Users</h2>
+    <div id="usersTable" class="space-y-3 mb-10"></div>
+
+    <!-- REQUESTS TABLE -->
+    <h2 class="text-2xl font-bold mb-4">Requests</h2>
+    <div id="requestsTable" class="space-y-3"></div>
+
+  </div>
+
+  <script type="module" src="./js/admin.js"></script>
+</body>
+</html>

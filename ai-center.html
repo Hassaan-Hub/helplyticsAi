@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white">
+
+    <div class="max-w-6xl mx-auto p-8">
+
+        <h1 class="text-4xl font-bold mb-8">
+            🤖 AI Insights Center
+        </h1>
+
+        <!-- GRID -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Trending Skills -->
+            <div class="bg-slate-900 p-6 rounded-xl">
+                <h2 class="text-xl font-bold mb-4">
+                    🔥 Trending Skills
+                </h2>
+                <ul id="trendingSkills" class="space-y-2 text-slate-300"></ul>
+            </div>
+
+            <!-- Most Requests -->
+            <div class="bg-slate-900 p-6 rounded-xl">
+                <h2 class="text-xl font-bold mb-4">
+                    📊 Top Categories
+                </h2>
+                <ul id="topCategories" class="space-y-2 text-slate-300"></ul>
+            </div>
+
+            <!-- Urgency -->
+            <div class="bg-slate-900 p-6 rounded-xl">
+                <h2 class="text-xl font-bold mb-4">
+                    ⚡ Urgency Stats
+                </h2>
+                <ul id="urgencyStats" class="space-y-2 text-slate-300"></ul>
+            </div>
+
+            <!-- Community Growth -->
+            <div class="bg-slate-900 p-6 rounded-xl col-span-1 md:col-span-2 lg:col-span-3">
+                <h2 class="text-xl font-bold mb-4">
+                    📈 Community Growth Insight
+                </h2>
+
+                <p id="growthText" class="text-slate-300"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="./js/ai-center.js"></script>
+</body>
+
+</html>

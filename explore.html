@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Requests</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white min-h-screen">
+
+    <div class="max-w-7xl mx-auto p-8">
+
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-4xl font-bold">
+                Explore Requests
+            </h1>
+
+            <a href="dashboard.html" class="bg-slate-800 px-5 py-3 rounded-lg">
+                Dashboard
+            </a>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex gap-4 mb-8">
+
+            <select id="categoryFilter" class="bg-slate-900 p-3 rounded-lg">
+                <option value="All">All Categories</option>
+                <option value="Programming">Programming</option>
+                <option value="Design">Design</option>
+                <option value="General">General</option>
+            </select>
+
+            <select id="urgencyFilter" class="bg-slate-900 p-3 rounded-lg">
+                <option value="All">All Urgency</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+
+        </div>
+
+        <!-- Requests -->
+        <div id="requestsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+    </div>
+
+    <script type="module" src="./js/explore.js"></script>
+
+</body>
+
+</html>

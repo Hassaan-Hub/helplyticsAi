@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Request</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white min-h-screen">
+
+    <div class="max-w-3xl mx-auto p-8">
+
+        <h1 class="text-4xl font-bold mb-8">
+            Create Help Request
+        </h1>
+
+        <form id="requestForm" class="space-y-5">
+
+            <input id="title" type="text" placeholder="Request Title"
+                class="w-full p-4 bg-slate-900 rounded-lg outline-none">
+
+            <textarea id="description" rows="6" placeholder="Describe your problem..."
+                class="w-full p-4 bg-slate-900 rounded-lg outline-none"></textarea>
+
+            <input id="tags" type="text" placeholder="Tags (comma separated)"
+                class="w-full p-4 bg-slate-900 rounded-lg outline-none">
+
+            <select id="urgency" class="w-full p-4 bg-slate-900 rounded-lg">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <!-- AI Suggestions -->
+            <div class="bg-slate-900 p-5 rounded-lg">
+                <h3 class="font-bold mb-2">
+                    AI Suggestions
+                </h3>
+
+                <p id="categoryText">
+                    Category: -
+                </p>
+
+                <p id="tagText">
+                    Suggested Tags: -
+                </p>
+            </div>
+
+            <button class="bg-blue-600 px-8 py-3 rounded-lg">
+                Publish Request
+            </button>
+
+        </form>
+
+    </div>
+
+    <script type="module" src="./js/requests.js"></script>
+</body>
+
+</html>
