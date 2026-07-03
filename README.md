@@ -15,7 +15,7 @@
 
 ## 🌟 Live Demo
 
-🔗 https://YOUR_USERNAME.github.io/Helplytics-AI/
+🔗 https://Hassaan-Hub.github.io/Helplytics-AI/
 
 ---
 
