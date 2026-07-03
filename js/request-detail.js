@@ -37,11 +37,9 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 async function loadRequest() {
-    const docRef =
-        doc(db, "requests", requestId);
+    const docRef = doc(db, "requests", requestId);
 
-    const docSnap =
-        await getDoc(docRef);
+    const docSnap = await getDoc(docRef);
 
     if (!docSnap.exists()) {
         return;
