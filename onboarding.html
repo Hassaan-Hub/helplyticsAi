@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Onboarding</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body class="bg-slate-950 flex justify-center items-center min-h-screen">
+<body class="bg-slate-950 flex justify-center items-center min-h-screen px-4">
 
-  <div class="bg-slate-900 p-8 rounded-2xl w-[400px] shadow-lg">
-    <h1 class="text-3xl text-white font-bold mb-6 text-center">
+  <div class="bg-slate-900 p-6 sm:p-8 rounded-2xl w-full max-w-md shadow-lg">
+    <h1 class="text-2xl sm:text-3xl text-white font-bold mb-6 text-center">
       Complete Your Profile
     </h1>
 
@@ -19,25 +20,29 @@
         type="text"
         id="skills"
         placeholder="Skills (HTML, CSS, JS)"
-        class="w-full p-3 rounded-lg bg-slate-800 text-white outline-none"
+        required
+        class="w-full p-3 rounded-lg bg-slate-800 text-white outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
       />
 
       <input
         type="text"
         id="interests"
         placeholder="Interests"
-        class="w-full p-3 rounded-lg bg-slate-800 text-white outline-none"
+        required
+        class="w-full p-3 rounded-lg bg-slate-800 text-white outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
       />
 
       <input
         type="text"
         id="location"
         placeholder="Location"
-        class="w-full p-3 rounded-lg bg-slate-800 text-white outline-none"
+        required
+        class="w-full p-3 rounded-lg bg-slate-800 text-white outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
       />
 
       <button
-        class="w-full bg-blue-600 py-3 rounded-lg text-white font-bold"
+        type="submit"
+        class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg text-white font-bold text-sm sm:text-base"
       >
         Save Profile
       </button>

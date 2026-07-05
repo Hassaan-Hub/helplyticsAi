@@ -28,6 +28,20 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 logoutBtn.addEventListener("click", async () => {
+    const result = await Swal.fire({
+        title: "Logout?",
+        text: "Are you sure you want to logout?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#dc2626",
+        cancelButtonColor: "#64748b",
+        confirmButtonText: "Logout",
+        background: "#1e293b",
+        color: "#fff",
+    });
+
+    if (!result.isConfirmed) return;
+
     await signOut(auth);
 
     window.location.href = "login.html";

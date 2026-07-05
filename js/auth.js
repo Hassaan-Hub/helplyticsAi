@@ -46,11 +46,11 @@ if (signupForm) {
                 createdAt: serverTimestamp(),
             });
 
-            alert("Account Created Successfully!");
+            await Swal.fire({ icon: "success", title: "Success!", text: "Account Created Successfully!", background: "#1e293b", color: "#fff", confirmButtonColor: "#2563eb" });
 
             window.location.href = "onboarding.html";
         } catch (error) {
-            alert(error.message);
+            Swal.fire({ icon: "error", title: "Error!", text: error.message, background: "#1e293b", color: "#fff", confirmButtonColor: "#2563eb" });
         }
     });
 }
@@ -78,7 +78,7 @@ if (loginForm) {
 
             window.location.href = "dashboard.html";
         } catch (error) {
-            alert(error.message);
+            Swal.fire({ icon: "error", title: "Error!", text: error.message, background: "#1e293b", color: "#fff", confirmButtonColor: "#2563eb" });
         }
     });
 }
@@ -116,7 +116,7 @@ if (googleBtn) {
 
             window.location.href = "dashboard.html";
         } catch (error) {
-            alert(error.message);
+            Swal.fire({ icon: "error", title: "Error!", text: error.message, background: "#1e293b", color: "#fff", confirmButtonColor: "#2563eb" });
         }
     });
 }

@@ -1,28 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+<body class="bg-slate-950 flex justify-center items-center min-h-screen px-4">
 
-<body>
-    <form id="signupForm">
-        <input type="text" id="name" placeholder="Name" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Password" required>
+  <div class="bg-slate-900 p-6 sm:p-8 rounded-2xl w-full max-w-md shadow-lg">
+    <h1 class="text-2xl sm:text-3xl text-white font-bold mb-6 text-center">
+      Create Account
+    </h1>
 
-        <select id="role">
-            <option value="Need Help">Need Help</option>
-            <option value="Can Help">Can Help</option>
-            <option value="Both">Both</option>
-        </select>
-        <p>Already have an account? <a href="./login.html">Login</a></p>
-        <button type="submit">Create Account</button>
+    <form id="signupForm" class="space-y-4">
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Name"
+        required
+        class="w-full p-3 rounded-lg bg-slate-800 text-white outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+      />
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Email"
+        required
+        class="w-full p-3 rounded-lg bg-slate-800 text-white outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+      />
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        required
+        class="w-full p-3 rounded-lg bg-slate-800 text-white outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+      />
+
+      <select
+        id="role"
+        class="w-full p-3 rounded-lg bg-slate-800 text-white outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+      >
+        <option value="Need Help">Need Help</option>
+        <option value="Can Help">Can Help</option>
+        <option value="Both">Both</option>
+      </select>
+
+      <button
+        type="submit"
+        class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg text-white font-bold text-sm sm:text-base"
+      >
+        Create Account
+      </button>
+
+      <p class="text-slate-400 text-center text-sm sm:text-base">
+        Already have an account?
+        <a href="./login.html" class="text-blue-400 hover:underline">Login</a>
+      </p>
+
     </form>
+  </div>
 
-    <script type="module" src="./js/auth.js"></script>
+  <script type="module" src="./js/auth.js"></script>
 </body>
-
 </html>

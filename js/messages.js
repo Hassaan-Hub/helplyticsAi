@@ -140,7 +140,7 @@ function loadMessagesRealTime() {
 
 // SEND MESSAGE
 sendBtn.addEventListener("click", async () => {
-  if (!selectedUser) return alert("Select a user first");
+  if (!selectedUser) return Swal.fire({ icon: "warning", title: "Oops!", text: "Select a user first", background: "#1e293b", color: "#fff", confirmButtonColor: "#2563eb" });
   if (!msgInput.value.trim()) return;
 
   await addDoc(collection(db, "messages"), {

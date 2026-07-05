@@ -1,61 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>AI Center</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Center</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+<body class="bg-slate-950 text-white min-h-screen">
 
-<body class="bg-slate-950 text-white">
+  <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
 
-    <div class="max-w-6xl mx-auto p-8">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 sm:mb-8">
+      <h1 class="text-2xl sm:text-4xl font-bold">🤖 AI Insights Center</h1>
+      <a href="dashboard.html" class="bg-slate-800 hover:bg-slate-700 px-5 py-3 rounded-lg font-bold transition text-sm sm:text-base">← Dashboard</a>
+    </div>
 
-        <h1 class="text-4xl font-bold mb-8">
-            🤖 AI Insights Center
-        </h1>
+    <!-- GRID -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 
-        <!-- GRID -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Trending Skills -->
+      <div class="bg-slate-900 p-5 sm:p-6 rounded-xl shadow">
+        <h2 class="text-lg sm:text-xl font-bold mb-4 text-orange-400">🔥 Trending Skills</h2>
+        <ul id="trendingSkills" class="space-y-2 text-slate-300 text-sm sm:text-base"></ul>
+      </div>
 
-            <!-- Trending Skills -->
-            <div class="bg-slate-900 p-6 rounded-xl">
-                <h2 class="text-xl font-bold mb-4">
-                    🔥 Trending Skills
-                </h2>
-                <ul id="trendingSkills" class="space-y-2 text-slate-300"></ul>
-            </div>
+      <!-- Most Requests -->
+      <div class="bg-slate-900 p-5 sm:p-6 rounded-xl shadow">
+        <h2 class="text-lg sm:text-xl font-bold mb-4 text-purple-400">📊 Top Categories</h2>
+        <ul id="topCategories" class="space-y-2 text-slate-300 text-sm sm:text-base"></ul>
+      </div>
 
-            <!-- Most Requests -->
-            <div class="bg-slate-900 p-6 rounded-xl">
-                <h2 class="text-xl font-bold mb-4">
-                    📊 Top Categories
-                </h2>
-                <ul id="topCategories" class="space-y-2 text-slate-300"></ul>
-            </div>
+      <!-- Urgency -->
+      <div class="bg-slate-900 p-5 sm:p-6 rounded-xl shadow">
+        <h2 class="text-lg sm:text-xl font-bold mb-4 text-yellow-400">⚡ Urgency Stats</h2>
+        <ul id="urgencyStats" class="space-y-2 text-slate-300 text-sm sm:text-base"></ul>
+      </div>
 
-            <!-- Urgency -->
-            <div class="bg-slate-900 p-6 rounded-xl">
-                <h2 class="text-xl font-bold mb-4">
-                    ⚡ Urgency Stats
-                </h2>
-                <ul id="urgencyStats" class="space-y-2 text-slate-300"></ul>
-            </div>
-
-            <!-- Community Growth -->
-            <div class="bg-slate-900 p-6 rounded-xl col-span-1 md:col-span-2 lg:col-span-3">
-                <h2 class="text-xl font-bold mb-4">
-                    📈 Community Growth Insight
-                </h2>
-
-                <p id="growthText" class="text-slate-300"></p>
-            </div>
-
-        </div>
+      <!-- Community Growth -->
+      <div class="bg-slate-900 p-5 sm:p-6 rounded-xl shadow col-span-1 sm:col-span-2 lg:col-span-3">
+        <h2 class="text-lg sm:text-xl font-bold mb-4 text-green-400">📈 Community Growth Insight</h2>
+        <p id="growthText" class="text-slate-300 text-sm sm:text-base leading-relaxed"></p>
+      </div>
 
     </div>
 
-    <script type="module" src="./js/ai-center.js"></script>
-</body>
+  </div>
 
+  <script type="module" src="./js/ai-center.js"></script>
+</body>
 </html>

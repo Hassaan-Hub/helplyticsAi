@@ -1,77 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-
 <body class="bg-slate-950 text-white">
 
-    <div class="flex">
+  <!-- Mobile Top Bar -->
+  <div class="lg:hidden bg-slate-900 p-4 flex items-center justify-between">
+    <h1 class="text-lg font-bold text-blue-400">Helplytics AI</h1>
+    <button id="mobileMenuBtn" class="text-white text-2xl">☰</button>
+  </div>
 
-        <!-- Sidebar -->
-        <aside class="w-64 h-screen bg-slate-900 p-5">
-            <h1 class="text-2xl font-bold mb-8">
-                Helplytics AI
-            </h1>
+  <div class="flex flex-col lg:flex-row">
 
-            <ul class="space-y-4">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="create-request.html">Create Request</a></li>
-                <li><a href="explore.html">Explore</a></li>
-                <li><a href="messages.html">Messages</a></li>
-                <li><a href="notifications.html">Notifications</a></li>
-                <li><a href="profile.html">Profile</a></li>
-            </ul>
+    <!-- Sidebar -->
+    <aside id="sidebar" class="hidden lg:flex w-64 h-screen bg-slate-900 p-5 flex-col">
+      <h1 class="text-2xl font-bold mb-8 text-blue-400">
+        Helplytics AI
+      </h1>
 
-            <button id="logoutBtn" class="mt-10 bg-red-600 px-4 py-2 rounded">
-                Logout
-            </button>
-        </aside>
+      <nav class="flex-1">
+        <ul class="space-y-2">
+          <li>
+            <a href="dashboard.html" class="block p-3 rounded-lg bg-blue-600 font-semibold">Dashboard</a>
+          </li>
+          <li>
+            <a href="create-request.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Create Request</a>
+          </li>
+          <li>
+            <a href="explore.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Explore</a>
+          </li>
+          <li>
+            <a href="messages.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Messages</a>
+          </li>
+          <li>
+            <a href="notifications.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Notifications</a>
+          </li>
+          <li>
+            <a href="profile.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Profile</a>
+          </li>
+        </ul>
+      </nav>
 
-        <!-- Main -->
-        <main class="flex-1 p-8">
+      <button id="logoutBtn" class="bg-red-600 hover:bg-red-700 px-4 py-3 rounded-lg font-bold transition">
+        Logout
+      </button>
+    </aside>
 
-            <h2 id="welcome" class="text-3xl font-bold mb-8">
-                Welcome
-            </h2>
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebarOverlay" class="fixed inset-0 bg-black/50 z-10 hidden"></div>
+    <aside id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-slate-900 p-5 flex flex-col z-20 -translate-x-full transition-transform">
+      <div class="flex justify-between items-center mb-8">
+        <h1 class="text-2xl font-bold text-blue-400">Helplytics AI</h1>
+        <button id="closeSidebar" class="text-white text-2xl">✕</button>
+      </div>
+      <nav class="flex-1">
+        <ul class="space-y-2">
+          <li>
+            <a href="dashboard.html" class="block p-3 rounded-lg bg-blue-600 font-semibold">Dashboard</a>
+          </li>
+          <li>
+            <a href="create-request.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Create Request</a>
+          </li>
+          <li>
+            <a href="explore.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Explore</a>
+          </li>
+          <li>
+            <a href="messages.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Messages</a>
+          </li>
+          <li>
+            <a href="notifications.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Notifications</a>
+          </li>
+          <li>
+            <a href="profile.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Profile</a>
+          </li>
+        </ul>
+      </nav>
+      <button id="mobileLogoutBtn" class="bg-red-600 hover:bg-red-700 px-4 py-3 rounded-lg font-bold transition">
+        Logout
+      </button>
+    </aside>
 
-            <div class="grid grid-cols-4 gap-6">
+    <!-- Main -->
+    <main class="flex-1 p-4 sm:p-6 lg:p-8">
 
-                <div class="bg-slate-900 p-6 rounded-xl">
-                    <h3>Total Requests</h3>
-                    <p class="text-3xl mt-2">0</p>
-                </div>
+      <h2 id="welcome" class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
+        Welcome
+      </h2>
 
-                <div class="bg-slate-900 p-6 rounded-xl">
-                    <h3>Completed</h3>
-                    <p class="text-3xl mt-2">0</p>
-                </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
 
-                <div class="bg-slate-900 p-6 rounded-xl">
-                    <h3>Trust Score</h3>
-                    <p class="text-3xl mt-2">0</p>
-                </div>
+        <div class="bg-slate-900 p-5 sm:p-6 rounded-xl shadow">
+          <h3 class="text-slate-400 text-xs sm:text-sm uppercase tracking-wider">Total Requests</h3>
+          <p class="text-3xl sm:text-4xl font-bold mt-2">0</p>
+        </div>
 
-                <div class="bg-slate-900 p-6 rounded-xl">
-                    <h3>Badge</h3>
-                    <p class="text-3xl mt-2">Beginner</p>
-                </div>
+        <div class="bg-slate-900 p-5 sm:p-6 rounded-xl shadow">
+          <h3 class="text-slate-400 text-xs sm:text-sm uppercase tracking-wider">Completed</h3>
+          <p class="text-3xl sm:text-4xl font-bold mt-2">0</p>
+        </div>
 
-                <a href="create-request.html" class="bg-blue-600 px-5 py-3 rounded-lg">
-                    Create Request
-                </a>
-            </div>
+        <div class="bg-slate-900 p-5 sm:p-6 rounded-xl shadow">
+          <h3 class="text-slate-400 text-xs sm:text-sm uppercase tracking-wider">Trust Score</h3>
+          <p class="text-3xl sm:text-4xl font-bold mt-2">0</p>
+        </div>
 
-        </main>
+        <div class="bg-slate-900 p-5 sm:p-6 rounded-xl shadow">
+          <h3 class="text-slate-400 text-xs sm:text-sm uppercase tracking-wider">Badge</h3>
+          <p class="text-3xl sm:text-4xl font-bold mt-2">Beginner</p>
+        </div>
 
-    </div>
+      </div>
 
-    <script type="module" src="./js/dashboard.js"></script>
+      <a href="create-request.html" class="inline-block bg-blue-600 hover:bg-blue-700 px-5 sm:px-6 py-3 rounded-lg font-bold transition text-sm sm:text-base">
+        + Create Request
+      </a>
+
+    </main>
+
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById("mobileMenuBtn");
+    const closeBtn = document.getElementById("closeSidebar");
+    const mobileSidebar = document.getElementById("mobileSidebar");
+    const overlay = document.getElementById("sidebarOverlay");
+
+    function openSidebar() {
+      mobileSidebar.classList.remove("-translate-x-full");
+      overlay.classList.remove("hidden");
+    }
+
+    function closeSidebarFn() {
+      mobileSidebar.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+    }
+
+    if (menuBtn && closeBtn) {
+      menuBtn.addEventListener("click", openSidebar);
+      closeBtn.addEventListener("click", closeSidebarFn);
+      overlay.addEventListener("click", closeSidebarFn);
+    }
+  </script>
+
+  <script type="module" src="./js/dashboard.js"></script>
 </body>
-
 </html>

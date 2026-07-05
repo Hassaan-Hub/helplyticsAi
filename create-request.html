@@ -1,62 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Request</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Request</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-
 <body class="bg-slate-950 text-white min-h-screen">
 
-    <div class="max-w-3xl mx-auto p-8">
+  <div class="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8">
 
-        <h1 class="text-4xl font-bold mb-8">
-            Create Help Request
-        </h1>
-
-        <form id="requestForm" class="space-y-5">
-
-            <input id="title" type="text" placeholder="Request Title"
-                class="w-full p-4 bg-slate-900 rounded-lg outline-none">
-
-            <textarea id="description" rows="6" placeholder="Describe your problem..."
-                class="w-full p-4 bg-slate-900 rounded-lg outline-none"></textarea>
-
-            <input id="tags" type="text" placeholder="Tags (comma separated)"
-                class="w-full p-4 bg-slate-900 rounded-lg outline-none">
-
-            <select id="urgency" class="w-full p-4 bg-slate-900 rounded-lg">
-                <option value="Low">Low</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
-            </select>
-
-            <!-- AI Suggestions -->
-            <div class="bg-slate-900 p-5 rounded-lg">
-                <h3 class="font-bold mb-2">
-                    AI Suggestions
-                </h3>
-
-                <p id="categoryText">
-                    Category: -
-                </p>
-
-                <p id="tagText">
-                    Suggested Tags: -
-                </p>
-            </div>
-
-            <button class="bg-blue-600 px-8 py-3 rounded-lg">
-                Publish Request
-            </button>
-
-        </form>
-
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 sm:mb-8">
+      <h1 class="text-2xl sm:text-4xl font-bold">Create Help Request</h1>
+      <a href="dashboard.html" class="bg-slate-800 hover:bg-slate-700 px-5 py-3 rounded-lg font-bold transition text-sm sm:text-base">← Dashboard</a>
     </div>
 
-    <script type="module" src="./js/requests.js"></script>
-</body>
+    <form id="requestForm" class="space-y-5">
 
+      <input id="title" type="text" placeholder="Request Title" required
+        class="w-full p-4 bg-slate-900 rounded-lg text-white outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base" />
+
+      <textarea id="description" rows="6" placeholder="Describe your problem..." required
+        class="w-full p-4 bg-slate-900 rounded-lg text-white outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"></textarea>
+
+      <input id="tags" type="text" placeholder="Tags (comma separated)" required
+        class="w-full p-4 bg-slate-900 rounded-lg text-white outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base" />
+
+      <select id="urgency" class="w-full p-4 bg-slate-900 rounded-lg text-white outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+
+      <!-- AI Suggestions -->
+      <div class="bg-slate-900 p-5 rounded-lg border border-slate-800">
+        <h3 class="font-bold mb-2 text-blue-400">AI Suggestions</h3>
+        <p id="categoryText" class="text-slate-300 text-sm">Category: -</p>
+        <p id="tagText" class="text-slate-300 text-sm mt-1">Suggested Tags: -</p>
+      </div>
+
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-bold transition text-sm sm:text-base">
+        Publish Request
+      </button>
+
+    </form>
+
+  </div>
+
+  <script type="module" src="./js/requests.js"></script>
+</body>
 </html>

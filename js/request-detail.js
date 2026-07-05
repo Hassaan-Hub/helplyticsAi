@@ -96,7 +96,7 @@ helpBtn.addEventListener(
             }
         );
 
-        alert("You are now a helper!");
+        await Swal.fire({ icon: "success", title: "Success!", text: "You are now a helper!", background: "#1e293b", color: "#fff", confirmButtonColor: "#2563eb" });
 
         loadRequest();
     }
@@ -112,7 +112,7 @@ solveBtn.addEventListener(
             }
         );
 
-        alert("Request Solved");
+        await Swal.fire({ icon: "success", title: "Success!", text: "Request Solved!", background: "#1e293b", color: "#fff", confirmButtonColor: "#2563eb" });
 
         loadRequest();
     }

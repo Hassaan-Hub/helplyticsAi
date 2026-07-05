@@ -97,12 +97,12 @@ onAuthStateChanged(auth, (user) => {
                 }
             );
 
-            alert("Request Published!");
+            await Swal.fire({ icon: "success", title: "Success!", text: "Request Published!", background: "#1e293b", color: "#fff", confirmButtonColor: "#2563eb" });
 
             window.location.href =
                 "dashboard.html";
         } catch (error) {
-            alert(error.message);
+            Swal.fire({ icon: "error", title: "Error!", text: error.message, background: "#1e293b", color: "#fff", confirmButtonColor: "#2563eb" });
         }
     });
 });

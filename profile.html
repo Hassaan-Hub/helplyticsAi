@@ -1,85 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Profile</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-
 <body class="bg-slate-950 text-white min-h-screen">
 
-    <div class="max-w-5xl mx-auto p-8">
+  <!-- Mobile Top Bar -->
+  <div class="lg:hidden bg-slate-900 p-4 flex items-center justify-between">
+    <h1 class="text-lg font-bold text-blue-400">Helplytics AI</h1>
+    <button id="mobileMenuBtn" class="text-white text-2xl">☰</button>
+  </div>
 
-        <div class="bg-slate-900 rounded-2xl p-8">
+  <div class="flex flex-col lg:flex-row">
 
-            <div class="flex items-center gap-6">
+    <!-- Desktop Sidebar -->
+    <aside class="hidden lg:flex w-64 h-screen bg-slate-900 p-5 flex-col">
+      <h1 class="text-2xl font-bold mb-8 text-blue-400">Helplytics AI</h1>
+      <nav class="flex-1">
+        <ul class="space-y-2">
+          <li><a href="dashboard.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Dashboard</a></li>
+          <li><a href="create-request.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Create Request</a></li>
+          <li><a href="explore.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Explore</a></li>
+          <li><a href="messages.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Messages</a></li>
+          <li><a href="notifications.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Notifications</a></li>
+          <li><a href="profile.html" class="block p-3 rounded-lg bg-blue-600 font-semibold">Profile</a></li>
+        </ul>
+      </nav>
+      <button id="logoutBtn" class="bg-red-600 hover:bg-red-700 px-4 py-3 rounded-lg font-bold transition">Logout</button>
+    </aside>
 
-                <div class="w-24 h-24 rounded-full bg-blue-600 flex items-center justify-center text-3xl font-bold"
-                    id="avatar">
-                    H
-                </div>
+    <!-- Mobile Sidebar -->
+    <div id="sidebarOverlay" class="fixed inset-0 bg-black/50 z-10 hidden"></div>
+    <aside id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-slate-900 p-5 flex flex-col z-20 -translate-x-full transition-transform">
+      <div class="flex justify-between items-center mb-8">
+        <h1 class="text-2xl font-bold text-blue-400">Helplytics AI</h1>
+        <button id="closeSidebar" class="text-white text-2xl">✕</button>
+      </div>
+      <nav class="flex-1">
+        <ul class="space-y-2">
+          <li><a href="dashboard.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Dashboard</a></li>
+          <li><a href="create-request.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Create Request</a></li>
+          <li><a href="explore.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Explore</a></li>
+          <li><a href="messages.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Messages</a></li>
+          <li><a href="notifications.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Notifications</a></li>
+          <li><a href="profile.html" class="block p-3 rounded-lg bg-blue-600 font-semibold">Profile</a></li>
+        </ul>
+      </nav>
+      <button id="mobileLogoutBtn" class="bg-red-600 hover:bg-red-700 px-4 py-3 rounded-lg font-bold transition">Logout</button>
+    </aside>
 
-                <div>
-                    <h1 id="name" class="text-4xl font-bold">
-                        Loading...
-                    </h1>
+    <!-- Main -->
+    <main class="flex-1 p-4 sm:p-6 lg:p-8">
 
-                    <p id="email" class="text-slate-400">
-                        Loading...
-                    </p>
+      <div class="bg-slate-900 rounded-2xl p-6 sm:p-8 shadow-lg">
 
-                    <p id="role" class="text-slate-400">
-                        Loading...
-                    </p>
-                </div>
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
 
-            </div>
+          <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-blue-600 flex items-center justify-center text-2xl sm:text-3xl font-bold shrink-0" id="avatar">
+            H
+          </div>
 
-        </div>
-
-        <!-- Stats -->
-        <div class="grid md:grid-cols-2 gap-6 mt-8">
-
-            <div class="bg-slate-900 p-6 rounded-2xl">
-                <h2 class="text-xl font-bold mb-4">
-                    Skills
-                </h2>
-
-                <div id="skills"></div>
-            </div>
-
-            <div class="bg-slate-900 p-6 rounded-2xl">
-                <h2 class="text-xl font-bold mb-4">
-                    Interests
-                </h2>
-
-                <div id="interests"></div>
-            </div>
-
-            <div class="bg-slate-900 p-6 rounded-2xl">
-                <h2 class="text-xl font-bold mb-4">
-                    Location
-                </h2>
-
-                <p id="location"></p>
-            </div>
-
-            <div class="bg-slate-900 p-6 rounded-2xl">
-                <h2 class="text-xl font-bold mb-4">
-                    Trust Score
-                </h2>
-
-                <p id="trustScore"></p>
-                <p id="badge"></p>
-            </div>
+          <div class="text-center sm:text-left">
+            <h1 id="name" class="text-2xl sm:text-4xl font-bold">Loading...</h1>
+            <p id="email" class="text-slate-400 text-sm sm:text-base">Loading...</p>
+            <p id="role" class="text-slate-400 text-sm sm:text-base">Loading...</p>
+          </div>
 
         </div>
 
-    </div>
+      </div>
 
-    <script type="module" src="./js/profile.js"></script>
+      <!-- Stats -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-8">
 
+        <div class="bg-slate-900 p-6 rounded-2xl shadow">
+          <h2 class="text-lg sm:text-xl font-bold mb-4 text-blue-400">Skills</h2>
+          <div id="skills" class="text-sm sm:text-base"></div>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-2xl shadow">
+          <h2 class="text-lg sm:text-xl font-bold mb-4 text-purple-400">Interests</h2>
+          <div id="interests" class="text-sm sm:text-base"></div>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-2xl shadow">
+          <h2 class="text-lg sm:text-xl font-bold mb-4 text-slate-300">Location</h2>
+          <p id="location" class="text-slate-400 text-sm sm:text-base"></p>
+        </div>
+
+        <div class="bg-slate-900 p-6 rounded-2xl shadow">
+          <h2 class="text-lg sm:text-xl font-bold mb-4 text-yellow-400">Trust Score</h2>
+          <p id="trustScore" class="text-2xl sm:text-3xl font-bold text-white"></p>
+          <p id="badge" class="text-slate-400 text-sm sm:text-base mt-1"></p>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById("mobileMenuBtn");
+    const closeBtn = document.getElementById("closeSidebar");
+    const mobileSidebar = document.getElementById("mobileSidebar");
+    const overlay = document.getElementById("sidebarOverlay");
+
+    function openSidebar() { mobileSidebar.classList.remove("-translate-x-full"); overlay.classList.remove("hidden"); }
+    function closeSidebarFn() { mobileSidebar.classList.add("-translate-x-full"); overlay.classList.add("hidden"); }
+
+    if (menuBtn && closeBtn) {
+      menuBtn.addEventListener("click", openSidebar);
+      closeBtn.addEventListener("click", closeSidebarFn);
+      overlay.addEventListener("click", closeSidebarFn);
+    }
+  </script>
+
+  <script type="module" src="./js/profile.js"></script>
 </body>
-
 </html>

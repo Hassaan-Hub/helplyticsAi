@@ -103,13 +103,13 @@ async function loadAdminData() {
 // DELETE USER
 window.deleteUser = async (id) => {
   await deleteDoc(doc(db, "users", id));
-  alert("User deleted");
+  await Swal.fire({ icon: "success", title: "Deleted!", text: "User deleted", background: "#1e293b", color: "#fff", confirmButtonColor: "#2563eb" });
   loadAdminData();
 };
 
 // DELETE REQUEST
 window.deleteRequest = async (id) => {
   await deleteDoc(doc(db, "requests", id));
-  alert("Request deleted");
+  await Swal.fire({ icon: "success", title: "Deleted!", text: "Request deleted", background: "#1e293b", color: "#fff", confirmButtonColor: "#2563eb" });
   loadAdminData();
 };
