@@ -9,12 +9,6 @@
 </head>
 <body class="bg-slate-950 text-white min-h-screen">
 
-  <!-- Mobile Top Bar -->
-  <div class="lg:hidden bg-slate-900 p-4 flex items-center justify-between">
-    <h1 class="text-lg font-bold text-blue-400">Helplytics AI</h1>
-    <button id="mobileMenuBtn" class="text-white text-2xl">☰</button>
-  </div>
-
   <div class="flex flex-col lg:flex-row">
 
     <!-- Desktop Sidebar -->
@@ -31,26 +25,6 @@
         </ul>
       </nav>
       <button id="logoutBtn" class="bg-red-600 hover:bg-red-700 px-4 py-3 rounded-lg font-bold transition">Logout</button>
-    </aside>
-
-    <!-- Mobile Sidebar -->
-    <div id="sidebarOverlay" class="fixed inset-0 bg-black/50 z-10 hidden"></div>
-    <aside id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-slate-900 p-5 flex flex-col z-20 -translate-x-full transition-transform">
-      <div class="flex justify-between items-center mb-8">
-        <h1 class="text-2xl font-bold text-blue-400">Helplytics AI</h1>
-        <button id="closeSidebar" class="text-white text-2xl">✕</button>
-      </div>
-      <nav class="flex-1">
-        <ul class="space-y-2">
-          <li><a href="dashboard.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Dashboard</a></li>
-          <li><a href="create-request.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Create Request</a></li>
-          <li><a href="explore.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Explore</a></li>
-          <li><a href="messages.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Messages</a></li>
-          <li><a href="notifications.html" class="block p-3 rounded-lg bg-blue-600 font-semibold">Notifications</a></li>
-          <li><a href="profile.html" class="block p-3 rounded-lg hover:bg-slate-800 transition">Profile</a></li>
-        </ul>
-      </nav>
-      <button id="mobileLogoutBtn" class="bg-red-600 hover:bg-red-700 px-4 py-3 rounded-lg font-bold transition">Logout</button>
     </aside>
 
     <!-- Main -->
@@ -70,22 +44,6 @@
     </main>
 
   </div>
-
-  <script>
-    const menuBtn = document.getElementById("mobileMenuBtn");
-    const closeBtn = document.getElementById("closeSidebar");
-    const mobileSidebar = document.getElementById("mobileSidebar");
-    const overlay = document.getElementById("sidebarOverlay");
-
-    function openSidebar() { mobileSidebar.classList.remove("-translate-x-full"); overlay.classList.remove("hidden"); }
-    function closeSidebarFn() { mobileSidebar.classList.add("-translate-x-full"); overlay.classList.add("hidden"); }
-
-    if (menuBtn && closeBtn) {
-      menuBtn.addEventListener("click", openSidebar);
-      closeBtn.addEventListener("click", closeSidebarFn);
-      overlay.addEventListener("click", closeSidebarFn);
-    }
-  </script>
 
   <script type="module" src="./js/notifications.js"></script>
 </body>
